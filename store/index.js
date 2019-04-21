@@ -40,5 +40,10 @@ export const actions = {
     const oldTodos = state.todos;
     const newTodos = [newTodo, ...oldTodos]
     commit('SET_TODOS', newTodos);
-  }
+  },
+  async deleteTodo ({commit, state}, todoIdtoDelete) {
+    const oldTodos = state.todos;
+    const newTodos = oldTodos.filter(todo => todo.id !== todoIdtoDelete);
+    commit('SET_TODOS', newTodos);
+  },
 };
