@@ -4,10 +4,7 @@
     justify-center
     align-center
   >
-    <v-text-field
-      style="width: 400px"
-      placeholder="Add a new to-do…"
-    />
+    <new-todo />
     <v-card
       v-for="todo in todos"
       :key="todo.id"
@@ -23,8 +20,12 @@
 
 <script>
 import {mapState} from 'vuex';
+import NewTodo from '~/components/NewTodo';
 
 export default {
+  components: {
+    NewTodo,
+  },
   computed: {
     ...mapState([
       'todos'
