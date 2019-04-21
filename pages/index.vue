@@ -6,7 +6,9 @@
   >
     <v-card
       v-for="todo in todos"
-      :key="todo.id"  
+      :key="todo.id"
+      width="400"
+      class="my-1"
     >
       <v-card-text>
         {{ todo.text }}
