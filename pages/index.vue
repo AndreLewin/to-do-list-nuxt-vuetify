@@ -5,16 +5,20 @@
     align-center
   >
     <new-todo />
-    <v-card
-      v-for="todo in todos"
-      :key="todo.id"
-      width="400"
-      class="my-1"
+    <transition-group
+      name="list-complete"
     >
-      <v-card-text>
-        {{ todo.text }}
-      </v-card-text>
-    </v-card>
+      <v-card
+        v-for="todo in todos"
+        :key="todo.id"
+        width="400"
+        class="my-1"
+      >
+        <v-card-text>
+          {{ todo.text }}
+        </v-card-text>
+      </v-card>
+    </transition-group>
   </v-layout>
 </template>
 
@@ -33,3 +37,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .list-complete-enter {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+</style>
