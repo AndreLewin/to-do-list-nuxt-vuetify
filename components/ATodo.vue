@@ -18,7 +18,11 @@
         </v-btn>
       </v-card-actions>
       <v-card-text>
-        {{ text }}
+        <!-- @blur="text = todo.text" cancels the text edit -->
+        <v-text-field
+          v-model="text"
+          @blur="text = todo.text"
+        />
       </v-card-text>
       <v-card-actions>
         <v-btn
@@ -66,3 +70,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  /* reduce the amount of vertical taken after adding a text field */
+  .v-card__text {
+    padding: 0px;
+  }
+</style>
