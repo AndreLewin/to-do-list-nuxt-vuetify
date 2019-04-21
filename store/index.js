@@ -7,7 +7,7 @@ export const state = () => ({
     },
     {
       id: 2,
-      text: 'An usual task',
+      text: 'A normal task',
       isDone: false
     },
     {
