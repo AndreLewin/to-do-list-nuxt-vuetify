@@ -20,8 +20,10 @@
       <v-card-text>
         <!-- @blur="text = todo.text" cancels the text edit -->
         <v-text-field
+          ref="field"
           v-model="text"
           @blur="text = todo.text"
+          @keydown.enter="updateTodoText"
         />
       </v-card-text>
       <v-card-actions>
@@ -66,6 +68,14 @@ export default {
         todoIdtoUpdate: this.todo.id,
         propertiesToUpdate: {isDone: !this.todo.isDone}
       });
+    },
+    async updateTodoText () {
+      await this.$store.dispatch('updateTodo', {
+        todoIdtoUpdate: this.todo.id,
+        propertiesToUpdate: {text: this.text}
+      });
+      // unfocus after update so the user knows the edit has been saved
+      this.$refs.field.blur()
     }
   }
 }
