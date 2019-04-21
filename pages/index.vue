@@ -14,9 +14,18 @@
         width="400"
         class="my-1"
       >
-        <v-card-text>
-          {{ todo.text }}
-        </v-card-text>
+        <v-layout 
+          row
+        >
+          <v-card-text>
+            {{ todo.text }}
+          </v-card-text>
+          <v-card-actions>
+            <v-icon>
+              delete
+            </v-icon>
+          </v-card-actions>
+        </v-layout>
       </v-card>
     </transition-group>
   </v-layout>
