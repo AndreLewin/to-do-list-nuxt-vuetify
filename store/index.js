@@ -15,23 +15,29 @@ export const state = () => ({
       text: 'A rather difficult task',
       isDone: false
     }
-  ]
+  ],
+  // used as an unique id for each todo
+  todoNumber: 3
 });
 
 export const mutations = {
   SET_TODOS: function (state, newTodos) {
     state.todos = newTodos;
   },
+  INCREMENT_TODONUMBER: function (state) {
+    state.todoNumber++;
+  }
 };
 
 export const actions = {
   async createTodo ({commit, state}, newTodoText) {
-    const oldTodos = state.todos;
+    commit('INCREMENT_TODONUMBER');
     const newTodo = {
-      id: '4', // TODO
+      id: state.todoNumber,
       text: newTodoText,
       isDone: false
     }
+    const oldTodos = state.todos;
     const newTodos = [...oldTodos, newTodo]
     commit('SET_TODOS', newTodos);
   }
