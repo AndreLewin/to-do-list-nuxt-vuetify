@@ -11,6 +11,9 @@ $ yarn install
 # serve with hot reload at localhost:3000
 $ yarn run dev
 
+# check code on linting rules
+$ yarn run lint
+
 # build for production and launch server
 $ yarn run build
 $ yarn start
