@@ -2,6 +2,7 @@
   <v-card
     width="400"
     class="my-1"
+    :color="todo.isDone ? 'success' : ''"
   >
     <v-layout 
       row
@@ -12,7 +13,7 @@
           @click="switchIsDoneOfTodo"
         >
           <v-icon>
-            done
+            {{ todo.isDone ? 'clear' : 'done' }}
           </v-icon>
         </v-btn>
       </v-card-actions>
