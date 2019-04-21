@@ -6,6 +6,15 @@
     <v-layout 
       row
     >
+      <v-card-actions>
+        <v-btn
+          icon
+        >
+          <v-icon>
+            done
+          </v-icon>
+        </v-btn>
+      </v-card-actions>
       <v-card-text>
         {{ text }}
       </v-card-text>
