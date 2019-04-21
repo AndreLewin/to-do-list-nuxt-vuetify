@@ -59,11 +59,6 @@ export default {
       stylus: {
         import: ['~assets/style/variables.styl']
       }
-    },
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
     }
   }
 }
