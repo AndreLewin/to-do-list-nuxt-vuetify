@@ -4,6 +4,10 @@
     justify-center
     align-center
   >
+    <v-text-field
+      style="width: 400px"
+      placeholder="Add a new to-do…"
+    />
     <v-card
       v-for="todo in todos"
       :key="todo.id"
