@@ -18,6 +18,16 @@ export const state = () => ({
   ]
 });
 
-export const mutations = {};
+export const mutations = {
+  SET_TODOS: function (state, newTodos) {
+    state.todos = newTodos;
+  },
+};
 
-export const actions = {};
+export const actions = {
+  async createTodo ({commit, state}, newTodo) {
+    const oldTodos = state.todos;
+    const newTodos = [...oldTodos, newTodo]
+    commit('SET_TODOS', newTodos);
+  }
+};
