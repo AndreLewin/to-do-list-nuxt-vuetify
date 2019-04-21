@@ -25,8 +25,13 @@ export const mutations = {
 };
 
 export const actions = {
-  async createTodo ({commit, state}, newTodo) {
+  async createTodo ({commit, state}, newTodoText) {
     const oldTodos = state.todos;
+    const newTodo = {
+      id: '4', // TODO
+      text: newTodoText,
+      isDone: false
+    }
     const newTodos = [...oldTodos, newTodo]
     commit('SET_TODOS', newTodos);
   }

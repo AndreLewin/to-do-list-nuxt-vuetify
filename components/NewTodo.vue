@@ -1,10 +1,26 @@
 <template>
   <v-text-field
+    v-model="text"
     style="width: 400px"
     placeholder="Add a new to-do…"
+    @keydown.enter="createTodo"
   />
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      text: ''
+    }
+  },
+  methods: {
+    async createTodo () {
+      if (this.text !== '') {
+        this.$store.dispatch('createTodo', this.text);
+        this.text = '';
+      }
+    }
+  }
+}
 </script>
