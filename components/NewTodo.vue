@@ -3,6 +3,7 @@
     v-model="text"
     style="width: 400px"
     placeholder="Add a new to-do…"
+    append-icon="add"
     @keydown.enter="createTodo"
   />
 </template>
