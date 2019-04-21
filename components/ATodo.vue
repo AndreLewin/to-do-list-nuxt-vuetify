@@ -49,19 +49,17 @@ export default {
   },
   data () {
     return {
-      id: this.todo.id,
-      text: this.todo.text,
-      isDone: this.todo.isDone 
+      text: this.todo.text
     }
   },
   methods: {
     async deleteTodo () {
-      this.$store.dispatch('deleteTodo', this.id);
+      this.$store.dispatch('deleteTodo', this.todo.id);
     },
     async switchIsDoneOfTodo () {
       this.$store.dispatch('updateTodo', {
-        todoIdtoUpdate: this.id,
-        propertiesToUpdate: {isDone: !this.isDone}
+        todoIdtoUpdate: this.todo.id,
+        propertiesToUpdate: {isDone: !this.todo.isDone}
       });
     }
   }
