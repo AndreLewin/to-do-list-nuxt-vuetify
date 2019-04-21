@@ -10,9 +10,14 @@
         {{ text }}
       </v-card-text>
       <v-card-actions>
-        <v-icon>
-          delete
-        </v-icon>
+        <v-btn
+          icon
+          @click="deleteTodo"
+        >
+          <v-icon>
+            delete
+          </v-icon>
+        </v-btn>
       </v-card-actions>
     </v-layout>
   </v-card>
@@ -34,8 +39,14 @@ export default {
   },
   data () {
     return {
+      id: this.todo.id,
       text: this.todo.text,
       isDone: this.todo.isDone 
+    }
+  },
+  methods: {
+    async deleteTodo () {
+      this.$store.dispatch('deleteTodo', this.id);
     }
   }
 }
