@@ -41,9 +41,20 @@ export const actions = {
     const newTodos = [newTodo, ...oldTodos]
     commit('SET_TODOS', newTodos);
   },
+  async updateTodo ({commit, state}, {todoIdtoUpdate, propertiesToUpdate}) {
+    const oldTodos = state.todos;
+    const newTodos = oldTodos.map(todo => {
+      if (todo.id === todoIdtoUpdate) {
+        return {...todo, ...propertiesToUpdate}
+      } else {
+        return todo;
+      }
+    });
+    commit('SET_TODOS', newTodos);
+  },
   async deleteTodo ({commit, state}, todoIdtoDelete) {
     const oldTodos = state.todos;
     const newTodos = oldTodos.filter(todo => todo.id !== todoIdtoDelete);
     commit('SET_TODOS', newTodos);
-  },
+  }
 };

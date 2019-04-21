@@ -9,6 +9,7 @@
       <v-card-actions>
         <v-btn
           icon
+          @click="switchIsDoneOfTodo"
         >
           <v-icon>
             done
@@ -56,6 +57,12 @@ export default {
   methods: {
     async deleteTodo () {
       this.$store.dispatch('deleteTodo', this.id);
+    },
+    async switchIsDoneOfTodo () {
+      this.$store.dispatch('updateTodo', {
+        todoIdtoUpdate: this.id,
+        propertiesToUpdate: {isDone: !this.isDone}
+      });
     }
   }
 }
