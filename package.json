@@ -17,6 +17,10 @@
     "vuetify-loader": "^1.2.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^5.2.2",
     "nodemon": "^1.18.9",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
