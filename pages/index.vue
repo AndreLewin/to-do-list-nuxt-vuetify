@@ -22,23 +22,13 @@
 </template>
 
 <script>
+import {mapState} from 'vuex';
+
 export default {
-  data () {
-    return {
-      todos: [{
-        id: 1,
-        text: "A simple task",
-        isDone: false
-      }, {
-        id: 2,
-        text: "An usual task",
-        isDone: false
-      }, {
-        id: 3,
-        text: "A rather difficult task",
-        isDone: false
-      }]
-    };
+  computed: {
+    ...mapState([
+      'todos'
+    ])
   }
 }
 </script>
