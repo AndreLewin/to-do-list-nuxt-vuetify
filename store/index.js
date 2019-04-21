@@ -38,7 +38,7 @@ export const actions = {
       isDone: false
     }
     const oldTodos = state.todos;
-    const newTodos = [...oldTodos, newTodo]
+    const newTodos = [newTodo, ...oldTodos]
     commit('SET_TODOS', newTodos);
   }
 };
