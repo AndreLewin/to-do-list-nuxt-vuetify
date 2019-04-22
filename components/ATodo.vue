@@ -35,6 +35,11 @@
             delete
           </v-icon>
         </v-btn>
+        <v-icon
+          class="handle cursor-grab"
+        >
+          drag_indicator
+        </v-icon>
       </v-card-actions>
     </v-layout>
   </v-card>
@@ -85,5 +90,8 @@ export default {
   /* reduce the amount of vertical taken after adding a text field */
   .v-card__text {
     padding: 0px;
+  }
+  .cursor-grab {
+    cursor: grab;
   }
 </style>

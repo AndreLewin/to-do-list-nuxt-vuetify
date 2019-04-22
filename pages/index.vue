@@ -7,6 +7,7 @@
     <new-todo />
     <draggable
       v-model="todos"
+      handle=".handle"
     >
       <transition-group
         name="list-complete"
