@@ -56,5 +56,8 @@ export const actions = {
     const oldTodos = state.todos;
     const newTodos = oldTodos.filter(todo => todo.id !== todoIdtoDelete);
     commit('SET_TODOS', newTodos);
+  },
+  async updateTodos ({commit}, newTodos) {
+    commit('SET_TODOS', newTodos);
   }
 };

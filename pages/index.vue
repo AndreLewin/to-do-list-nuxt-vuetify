@@ -5,7 +5,9 @@
     align-center
   >
     <new-todo />
-    <draggable>
+    <draggable
+      v-model="todos"
+    >
       <transition-group
         name="list-complete"
       >
@@ -20,7 +22,6 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
 import draggable from 'vuedraggable';
 import NewTodo from '~/components/NewTodo';
 import ATodo from '~/components/ATodo';
@@ -32,9 +33,20 @@ export default {
     ATodo
   },
   computed: {
-    ...mapState([
-      'todos'
-    ])
+    todos: {
+      get () {
+        return this.$store.state.todos;
+      },
+      // store the change of todos done by vuedraggable
+      set (newTodos) {
+        this.updateTodos(newTodos)
+      }
+    }
+  },
+  methods: {
+    async updateTodos (newTodos) {
+      this.$store.dispatch('updateTodos', newTodos);
+    }
   }
 }
 </script>
