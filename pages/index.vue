@@ -4,6 +4,12 @@
     justify-center
     align-center
   >
+    <v-text-field
+      v-model="search"
+      style="width: 400px"
+      placeholder="Search (e.g. simple, #later)"
+      append-icon="search"
+    />
     <new-todo />
     <draggable
       v-model="todos"
@@ -14,6 +20,7 @@
       >
         <a-todo
           v-for="todo in todos"
+          v-show="todo.text.includes(search)"
           :key="todo.id"
           :todo="todo"
         />
@@ -32,6 +39,11 @@ export default {
     draggable,
     NewTodo,
     ATodo
+  },
+  data () {
+    return {
+      search: ''
+    }
   },
   computed: {
     todos: {
