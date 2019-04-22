@@ -25,7 +25,7 @@
           auto-grow
           rows="1"
           @blur="text = todo.text"
-          @keydown.enter="updateTodoText"
+          @keydown.enter="updateTodoText(text)"
         />
       </v-card-text>
       <v-card-actions>
@@ -42,6 +42,14 @@
         >
           drag_indicator
         </v-icon>
+        <v-btn
+          icon
+          @click="updateTodoText(`${text} #important`)"
+        >
+          <v-icon>
+            label_important
+          </v-icon>
+        </v-btn>
       </v-card-actions>
     </v-layout>
   </v-card>
@@ -76,10 +84,10 @@ export default {
         propertiesToUpdate: {isDone: !this.todo.isDone}
       });
     },
-    async updateTodoText () {
+    async updateTodoText (newText) {
       await this.$store.dispatch('updateTodo', {
         todoIdtoUpdate: this.todo.id,
-        propertiesToUpdate: {text: this.text}
+        propertiesToUpdate: {text: newText}
       });
       // unfocus after update so the user knows the edit has been saved
       this.$refs.field.blur()
