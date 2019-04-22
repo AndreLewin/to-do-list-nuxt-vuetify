@@ -1,6 +1,5 @@
 <template>
   <v-card
-    width="400"
     class="my-1"
     :color="todo.isDone ? 'success' : ''"
   >
@@ -45,6 +44,14 @@
         >
           <v-icon>
             label_important
+          </v-icon>
+        </v-btn>
+        <v-btn
+          icon
+          @click="updateTodoText(`${text} #later`)"
+        >
+          <v-icon>
+            watch_later
           </v-icon>
         </v-btn>
       </v-card-actions>

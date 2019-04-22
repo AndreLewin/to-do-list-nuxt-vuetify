@@ -4,28 +4,29 @@
     justify-center
     align-center
   >
-    <v-text-field
-      v-model="search"
-      style="width: 400px"
-      placeholder="Search (e.g. simple, #later)"
-      append-icon="search"
-    />
-    <new-todo />
-    <draggable
-      v-model="todos"
-      handle=".handle"
-    >
-      <transition-group
-        name="list-complete"
+    <v-flex>
+      <v-text-field
+        v-model="search"
+        placeholder="Search (e.g. simple, #later)"
+        append-icon="search"
+      />
+      <new-todo />
+      <draggable
+        v-model="todos"
+        handle=".handle"
       >
-        <a-todo
-          v-for="todo in todos"
-          v-show="todo.text.includes(search)"
-          :key="todo.id"
-          :todo="todo"
-        />
-      </transition-group>
-    </draggable>
+        <transition-group
+          name="list-complete"
+        >
+          <a-todo
+            v-for="todo in todos"
+            v-show="todo.text.includes(search)"
+            :key="todo.id"
+            :todo="todo"
+          />
+        </transition-group>
+      </draggable>
+    </v-flex>
   </v-layout>
 </template>
 
