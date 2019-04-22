@@ -33,11 +33,6 @@
             delete
           </v-icon>
         </v-btn>
-        <v-icon
-          class="handle cursor-grab"
-        >
-          drag_indicator
-        </v-icon>
         <v-btn
           icon
           @click="updateTodoText(`${text} #important`)"
@@ -54,6 +49,11 @@
             watch_later
           </v-icon>
         </v-btn>
+        <v-icon
+          class="handle cursor-grab"
+        >
+          drag_indicator
+        </v-icon>
       </v-card-actions>
     </v-layout>
   </v-card>
