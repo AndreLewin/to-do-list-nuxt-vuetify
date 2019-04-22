@@ -69,9 +69,11 @@ export default {
       }
     }
   },
-  data () {
-    return {
-      text: this.todo.text
+  computed: {
+    text: {
+      get () {
+        return this.todo.text;
+      }
     }
   },
   methods: {
