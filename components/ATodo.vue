@@ -19,9 +19,11 @@
       </v-card-actions>
       <v-card-text>
         <!-- @blur="text = todo.text" cancels the text edit -->
-        <v-text-field
+        <v-textarea
           ref="field"
           v-model="text"
+          auto-grow
+          rows="1"
           @blur="text = todo.text"
           @keydown.enter="updateTodoText"
         />
@@ -87,7 +89,7 @@ export default {
 </script>
 
 <style scoped>
-  /* reduce the amount of vertical taken after adding a text field */
+  /* reduce the amount of vertical taken after adding a text area */
   .v-card__text {
     padding: 0px;
   }
