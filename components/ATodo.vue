@@ -17,7 +17,6 @@
         </v-btn>
       </v-card-actions>
       <v-card-text>
-        <!-- @blur="text = todo.text" cancels the text edit -->
         <v-textarea
           v-model="text"
           auto-grow
@@ -35,6 +34,7 @@
         </v-btn>
         <v-btn
           icon
+          class="hidden-xs-only"
           @click="updateTodoText(`${text} #important`)"
         >
           <v-icon>
@@ -43,6 +43,7 @@
         </v-btn>
         <v-btn
           icon
+          class="hidden-xs-only"
           @click="updateTodoText(`${text} #later`)"
         >
           <v-icon>

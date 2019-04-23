@@ -2,7 +2,6 @@
   <v-layout
     column
     justify-center
-    align-center
   >
     <v-flex>
       <v-text-field
