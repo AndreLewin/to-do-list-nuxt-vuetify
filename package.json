@@ -1,7 +1,7 @@
 {
   "name": "to-do-list-nuxt-vuetify",
   "version": "1.0.0",
-  "description": "A simple to-do list with Nuxt and Vuetify",
+  "description": "A to-do list with Nuxt and Vuetify",
   "author": "André Lewin",
   "private": true,
   "scripts": {
