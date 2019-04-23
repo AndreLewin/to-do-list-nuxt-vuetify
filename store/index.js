@@ -1,23 +1,7 @@
 export const state = () => ({
-  todos: [
-    {
-      id: 1,
-      text: 'A simple task',
-      isDone: false
-    },
-    {
-      id: 2,
-      text: 'A boring task #later',
-      isDone: false
-    },
-    {
-      id: 3,
-      text: 'A rather difficult task',
-      isDone: false
-    }
-  ],
+  todos: [],
   // used as an unique id for each todo
-  todoNumber: 3
+  todoNumber: 0
 });
 
 export const mutations = {
